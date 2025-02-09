@@ -7,6 +7,10 @@ Might not be of use at all :P_
 
 ## Tools
 
-### Bananen
+### Echo
 
-Bananen.
+A simple echo tool that echoes back the input.
+
+### Bananen _**`AKA`**_ `banana`, `changelog`
+
+Chanelog generator/manager for your projects.
