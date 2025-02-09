@@ -1,0 +1,7 @@
+[package]
+name = "fruittools"
+description = "A collection of tools, utilities and libraries by Mar @strawmelonjuice"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
