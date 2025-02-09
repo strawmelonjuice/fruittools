@@ -6,7 +6,7 @@ fn main() {
 }
 
 fn process_args(mut args: Vec<String>) {
-    match args.remove(0).as_str() {
+    match args.remove(0).to_lowercase().as_str() {
         "--version" => {
             println!("Version: {}", VERSION);
         }
