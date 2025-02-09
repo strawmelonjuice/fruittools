@@ -4,4 +4,18 @@ description = "A collection of tools, utilities and libraries by Mar @strawmelon
 version = "0.1.0"
 edition = "2021"
 
+[workspace]
+members = ["bananen"]
+
+[workspace.package]
+edition = "2021"
+authors = ["MLC Bloeiman <mar@strawmelonjuice.com>"]
+repository = "https://codeberg.org/strawmelonjuice/fruittools"
+license = "GPL-3.0-or-later"
+readme = "README.md"
+homepage = "https://strawmelonjuice.com/?p=projects/fruittools"
+keywords = ["cli", "changelogs", "markdown"]
+categories = ["command-line-utilities"]
+
 [dependencies]
+bananen = { path = "./bananen" }
