@@ -3,12 +3,22 @@ name = "fruittools"
 description = "A collection of tools, utilities and libraries by Mar @strawmelonjuice"
 version = "0.1.0"
 edition = "2021"
+[[bin]]
+name = "fruittools"
+path = "./src/main.rs"
+[[bin]]
+name = "bananen"
+path = "./bananen/src/main.rs"
+[[bin]]
+name = "pulp"
+path = "./pulp/src/main.rs"
+
 
 [workspace]
-members = ["bananen"]
+members = ["bananen", "pulp"]
 
 [workspace.package]
-edition = "2021"
+edition = "2024"
 authors = ["MLC Bloeiman <mar@strawmelonjuice.com>"]
 repository = "https://codeberg.org/strawmelonjuice/fruittools"
 license = "GPL-3.0-or-later"
@@ -19,3 +29,4 @@ categories = ["command-line-utilities"]
 
 [dependencies]
 bananen = { path = "./bananen" }
+pulp = { path = "./pulp/" }

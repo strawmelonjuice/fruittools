@@ -11,7 +11,6 @@ homepage = "https://strawmelonjuice.com/?p=projects/bananen"
 keywords = ["cli", "changelogs", "markdown"]
 categories = ["command-line-utilities"]
 
-
 [dependencies]
 cynthia_con = "0.1.1"
 serde = { version = "1.0.104", features = ["derive"] }
