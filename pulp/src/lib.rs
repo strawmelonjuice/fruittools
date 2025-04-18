@@ -1,4 +1,5 @@
 use cynthia_con::{CynthiaColors, CynthiaStyles};
+mod toolchains;
 const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 pub fn interpret(mut args: Vec<String>) {
