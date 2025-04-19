@@ -9,17 +9,14 @@ pub mod toolchains;
 
 pub fn interpret(mut args: Vec<String>) {
     println!(
-        "{}{}\nBy {}\n{}",
+        "{}{}\nBy {}{}{}\n{}",
         cynthia_con::horizline(),
         format!("{} v{VERSION}", "Pulp! 🍹".color_lilac())
             .style_bold()
             .style_centered(),
-        format!(
-            "{}{}{}",
-            "Straw".color_red(),
-            "melon".color_green(),
-            "juice".color_orange()
-        ),
+        "Straw".color_red(),
+        "melon".color_green(),
+        "juice".color_orange(),
         cynthia_con::horizline()
     );
     if args.is_empty() {

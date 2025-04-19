@@ -14,4 +14,3 @@ pub enum FruitToolsUnifiedErrorType {
     GleamManifestParseError,
     NoManifestRecognized,
 }
-

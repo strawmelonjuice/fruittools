@@ -1,9 +1,9 @@
 #[test]
 pub(crate) fn test_detect_dev_tool_gleam_plus() {
+    use crate::toolchains::{Target, ToolChainName, ToolNameGleam};
     use std::fs;
     use std::io::Write;
     use std::path::PathBuf;
-    use crate::toolchains::{Target, ToolChainName, ToolNameGleam};
 
     let test_dir =
         PathBuf::from("./test_toolchain_detection/gleam/lustre_dev_tools_and_gleescript");
@@ -53,13 +53,12 @@ gleescript = ">= 1.2.0 and < 2.0.0""#;
 
 #[test]
 pub(crate) fn test_detect_dev_tool_gleam() {
+    use crate::toolchains::{Target, ToolChainName, ToolNameGleam};
     use std::fs;
     use std::io::Write;
     use std::path::PathBuf;
-    use crate::toolchains::{Target, ToolChainName, ToolNameGleam};
 
-    let test_dir =
-        PathBuf::from("./test_toolchain_detection/gleam/gleam");
+    let test_dir = PathBuf::from("./test_toolchain_detection/gleam/gleam");
     fs::create_dir_all(&test_dir).unwrap();
     // Create a test gleam.toml file
     let mut file = fs::File::create(test_dir.join("gleam.toml")).unwrap();
@@ -103,10 +102,10 @@ gleeunit = ">= 1.0.0 and < 2.0.0"
 
 #[test]
 pub(crate) fn test_detect_dev_tool_rust() {
+    use crate::toolchains::{Target, ToolChainName, ToolNameRust};
     use std::fs;
     use std::io::Write;
     use std::path::PathBuf;
-    use crate::toolchains::{Target, ToolChainName, ToolNameRust};
 
     let test_dir = PathBuf::from("./test_toolchain_detection/rust");
     fs::create_dir_all(&test_dir.join("src")).unwrap();
