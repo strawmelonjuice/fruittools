@@ -2,6 +2,7 @@
 name = "fruittools"
 description = "A collection of tools, utilities and libraries by Mar @strawmelonjuice"
 version = "0.1.0"
+default-run = "fruittools"
 edition = "2024"
 [[bin]]
 name = "fruittools"

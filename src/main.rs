@@ -6,20 +6,18 @@ fn main() {
 }
 
 fn process_args(mut args: Vec<String>) {
-    if args.len() <= 0 {
+    if args.is_empty() {
         args = vec![String::from("help")]
     }
     match args.remove(0).to_lowercase().as_str() {
         "--version" => {
             println!("Version: {}", VERSION);
         }
-        "echo" => {
-            utils::echo::main(args);
-        }
+        "echo" | "say" | "print" | "tell" => utils::echo::main(args),
         #[cfg(feature = "tool-bananen")]
         "changelog" | "bananen" | "banana" => utils::bananen(args),
         #[cfg(feature = "tool-pulp")]
-        "run" | "pulp" => utils::pulp(args),
+        "run" | "runner" | "pulp" => utils::pulp(args),
         "help" => {
             todo!("Print some help here!");
         }
