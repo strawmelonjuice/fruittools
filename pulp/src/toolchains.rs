@@ -92,22 +92,30 @@ impl ToolChainName {
                         ]
                     }
                     Target::Build => {
-                        todo!()
+                        vec![
+                            (6, ToolChainName::Gleam(ToolNameGleam::GleEscript)),
+                            (6, ToolChainName::Rust(ToolNameRust::None)),
+                            (5, ToolChainName::Gleam(ToolNameGleam::LustreDev)),
+                            (3, ToolChainName::Gleam(ToolNameGleam::None)),
+                        ]
                     }
                     Target::Watch => {
                         todo!()
                     }
                 }
             };
-
             filter.sort_by(|a, b| (b.0.cmp(&a.0)));
-            println!(
-                "Sorted filter: {:?}\nComparing against: {:?}",
-                filter, found
-            );
+            if cfg!(test) {
+                println!(
+                    "Sorted filter: {:?}\nComparing against: {:?}",
+                    filter, found
+                );
+            }
             // We need to find the first element in filter that is also in found.
             let res = filter.iter().find(|x| found.contains(&x.1));
-            println!("res: {:?}", res);
+            if cfg!(test) {
+                println!("res: {:?}", res);
+            }
             if res.is_none() {
                 Err(FruitToolsUnifiedErrorType::NoManifestRecognized)
             } else {
