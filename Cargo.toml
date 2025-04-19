@@ -39,4 +39,5 @@ fruittools_shared = { path = "./fruittools_shared" }
 
 [dependencies]
 bananen = { path = "./bananen", optional = true }
-pulp = { path = "./pulp/", optional = true }
+pulp = { path = "./pulp", optional = true }
+cynthia_con = {workspace = true}

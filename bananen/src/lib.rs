@@ -5,17 +5,14 @@ mod operations;
 
 pub fn interpret(mut args: Vec<String>) {
     println!(
-        "{}{}\nBy {}\n{}",
+        "{}{}\nBy {}{}{}\n{}",
         cynthia_con::horizline(),
         format!("{} v{VERSION}", "Bananen! 🍌".color_yellow())
             .style_bold()
             .style_centered(),
-        format!(
-            "{}{}{}",
-            "Straw".color_red(),
-            "melon".color_green(),
-            "juice".color_orange()
-        ),
+        "Straw".color_red(),
+        "melon".color_green(),
+        "juice".color_orange(),
         cynthia_con::horizline()
     );
     if args.is_empty() {
@@ -30,7 +27,7 @@ pub fn interpret(mut args: Vec<String>) {
         "help" | "man" => {
             println!("{} Displaying help\n", "🚑".style_bold().color_bright_red());
             println!("\t{}", "Commands:".style_bold().style_underline());
-            println!("\tI'll be adding more commands soon! 🚀");
+            println!("\tI'll be adding more subcommands soon! 🚀");
         }
         "version" => {
             println!(
