@@ -16,7 +16,9 @@ fn process_args(mut args: Vec<String>) {
         "echo" => {
             utils::echo::main(args);
         }
+        #[cfg(feature = "tool-bananen")]
         "changelog" | "bananen" | "banana" => utils::bananen(args),
+        #[cfg(feature = "tool-pulp")]
         "run" | "pulp" => utils::pulp(args),
         "help" => {
             todo!("Print some help here!");

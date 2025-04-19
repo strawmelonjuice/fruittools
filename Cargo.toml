@@ -2,20 +2,26 @@
 name = "fruittools"
 description = "A collection of tools, utilities and libraries by Mar @strawmelonjuice"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 [[bin]]
 name = "fruittools"
 path = "./src/main.rs"
 [[bin]]
 name = "bananen"
 path = "./bananen/src/main.rs"
+required-features = ["tool-bananen"]
 [[bin]]
 name = "pulp"
 path = "./pulp/src/main.rs"
+required-features = ["tool-pulp"]
 
+[features]
+default = ["tool-bananen", "tool-pulp"]
+tool-bananen = ["dep:bananen"]
+tool-pulp = ["dep:pulp"]
 
 [workspace]
-members = ["bananen", "pulp"]
+members = ["bananen", "fruittools_shared", "pulp"]
 
 [workspace.package]
 edition = "2024"
@@ -26,7 +32,10 @@ readme = "README.md"
 homepage = "https://strawmelonjuice.com/?p=projects/fruittools"
 keywords = ["cli", "changelogs", "markdown"]
 categories = ["command-line-utilities"]
+[workspace.dependencies]
+cynthia_con = { version = "0.1.1" }
+fruittools_shared = { path = "./fruittools_shared" }
 
 [dependencies]
-bananen = { path = "./bananen" }
-pulp = { path = "./pulp/" }
+bananen = { path = "./bananen", optional = true }
+pulp = { path = "./pulp/", optional = true }

@@ -1,6 +1,11 @@
+use cynthia_con;
 use cynthia_con::{CynthiaColors, CynthiaStyles};
-mod toolchains;
+pub(crate) use fruittools_shared;
+pub(crate) use walkdir;
 const VERSION: &str = env!("CARGO_PKG_VERSION");
+#[cfg(test)]
+pub mod tests;
+pub mod toolchains;
 
 pub fn interpret(mut args: Vec<String>) {
     println!(

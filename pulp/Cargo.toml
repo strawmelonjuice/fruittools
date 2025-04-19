@@ -11,4 +11,13 @@ keywords.workspace = true
 categories.workspace = true
 
 [dependencies]
-cynthia_con = "0.1.1"
+# Fancy console stuff
+cynthia_con = { workspace = true }
+# The fruittools_shared crate, which contains shared code between the fruittools tools
+fruittools_shared = { workspace = true }
+# Rusqlite for the user's configuration database, should save stuff like exceptions, preferences, etc.
+rusqlite = "0.32.1"
+serde = "1.0.217"
+toml = "0.8.19"
+walkdir = "2.5.0"
+
