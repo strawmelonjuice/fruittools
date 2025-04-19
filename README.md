@@ -43,15 +43,15 @@ Auto-pulp supports what its code knows, and tbh I don't know a whole lot. Do PR 
 
 | Priority for `dev` 0 = lowest | Priority for `build` 0 = lowest | Priority for `watch` 0 = lowest | Language | When detected                    | Runs                                   | Manifest     |
 |-------------------------------|---------------------------------|---------------------------------|----------|----------------------------------|----------------------------------------|--------------|
-| 6                             | 0                               | 2                               | Gleam    | `lustre_dev_tools` as dependency | `gleam run -m  lustre/dev start`       | `gleam.toml` |
-| 3                             | 0                               | 1                               | Gleam    | -                                | `gleam run`                            | `gleam.toml` |
-| 0                             | 0                               | 4                               | Gleam    | -                                | `watchexec gleam run`                  | `gleam.toml` |
-| 0                             | 5                               | 0                               | Gleam    | `lustre_dev_tools` as dependency | `gleam run -m lustre/dev build`        | `gleam.toml` |
-| 0                             | 3                               | 0                               | Gleam    | -                                | `gleam build`                          | `gleam.toml` |
-| 0                             | 6                               | 0                               | Gleam    | `gleescript` as a dependency     | `gleam build; gleam run -m gleescript` | `gleam.toml` |
-| 4                             | 0                               | 6                               | Rust     | -                                | `cargo watch -x run`                   | `cargo.toml` |
-| 5                             | 0                               | 5                               | Rust     | "`#[test]`" in any `.rs` file.   | `cargo watch -x test`                  | `cargo.toml` |
-| 0                             | 6                               | 0                               | Rust     | -                                | `cargo build`                          | `cargo.toml` |
+| 6                             | -                               | 2                               | Gleam    | `lustre_dev_tools` as dependency | `gleam run -m  lustre/dev start`       | `gleam.toml` |
+| 3                             | -                               | 1                               | Gleam    | -                                | `gleam run`                            | `gleam.toml` |
+| -                             | -                               | 4                               | Gleam    | -                                | `watchexec gleam run`                  | `gleam.toml` |
+| -                             | 5                               | -                               | Gleam    | `lustre_dev_tools` as dependency | `gleam run -m lustre/dev build`        | `gleam.toml` |
+| -                             | 3                               | -                               | Gleam    | -                                | `gleam build`                          | `gleam.toml` |
+| -                             | 6                               | -                               | Gleam    | `gleescript` as a dependency     | `gleam build; gleam run -m gleescript` | `gleam.toml` |
+| 4                             | -                               | 6                               | Rust     | -                                | `cargo watch -x run`                   | `cargo.toml` |
+| 5                             | -                               | 5                               | Rust     | "`#[test]`" in any `.rs` file.   | `cargo watch -x test`                  | `cargo.toml` |
+| -                             | 6                               | -                               | Rust     | -                                | `cargo build`                          | `cargo.toml` |
 
 
 
