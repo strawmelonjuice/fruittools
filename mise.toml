@@ -1,0 +1,31 @@
+[tools]
+erlang = "27"
+gleam = "1.11.1"
+rust = "1.87.0"
+[tasks.compile-codegenerator]
+description = "Compile code generator"
+run = ["gleam export erlang-shipment"
+]
+dir = "{{ config_root }}/codegen"
+
+[tasks.run-codegen]
+wait_for = ["compile-codegenerator"]
+description = "Run code generation, this creates necessary Rust code from data files."
+# Runs the compiled erlang files to generate Rust code so that the Rust code can be compiled.
+run = "sh codegen/build/erlang-shipment/entrypoint.sh run"
+run_windows = "pwsh -ExecutionPolicy Bypass -File codegen\\build\\erlang-shipment\\entrypoint.ps1 run"
+dir = "{{ config_root }}"
+
+[tasks.compile-fruittools]
+description = "Compile fruittools"
+run = "cargo build"
+
+[tasks.full-build]
+description = "Run full build"
+depends = ["compile-codegenerator", "run-codegen"]
+run = "cargo build"
+
+[tasks.full-build-run]
+description = "Run full build and run the application"
+depends = ["compile-codegenerator", "run-codegen"]
+run = "cargo run"
