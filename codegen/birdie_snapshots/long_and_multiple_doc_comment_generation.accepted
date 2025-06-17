@@ -1,0 +1,18 @@
+---
+version: 1.3.1
+title: long and multiple doc comment generation
+file: ./test/codegen_test.gleam
+test_name: loads_of_doc_comments_test
+---
+/// First doc comment
+/// 
+/// A really long doc comment:
+/// iodj hauigr hbuhguy kshuyr ewhayuj yugrgbay yfdgyfsufgys difjodf fjfijwo aiojdaoidj aidjadoo adijdiojdoja aido
+///  ada  dadad asjisj ad
+/// And so it does:
+/// ddioshfu eufhsihfs shfuhsfhuf sififi sisis udihsf uisfhiuf ushfufshf suhfifhui usfuhuf dauhd hhh dhhhd auh bro
+/// -ken adadada daf fadfgh
+/// But then, no spaces!
+/// 
+/// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+/// -aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

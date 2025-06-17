@@ -1,5 +1,8 @@
+import codegen/internal
+import codegen/pulp
 import gleam/io
 
 pub fn main() -> Nil {
-  io.println("Hello from codegen!")
+  io.print(internal.infoblock())
+  let _ = pulp.main()
 }
