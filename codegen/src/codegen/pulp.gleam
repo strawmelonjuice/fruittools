@@ -1,3 +1,4 @@
+import codegen/internal/comments
 import gleam/dynamic/decode
 
 pub fn main() {
@@ -9,7 +10,12 @@ pub fn main() {
 ///
 /// So that pulp can query which item to run and wether to save this to the database.
 fn items() {
-  let doc_comment = ["in"]
+  let doc_comment =
+    comments.doc_comments([
+      "This is a generated function, do not edit it directly.", "",
+      "This function returns a list of `PulpTruthSourceItem` that can be used to determine which command to run.",
+    ])
+
   todo
 }
 
