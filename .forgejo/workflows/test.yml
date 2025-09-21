@@ -15,10 +15,11 @@ jobs:
       - run: |
           curl https://mise.run | sh
           mise install
-      - run: cd fruittools-dmn
-      - run: gleam deps download
-      - run: gleam test
-      - run: gleam format --check src test
+      - run: |
+          cd fruittools-dmn
+          gleam deps download
+          gleam test
+          gleam format --check src test
   checks-cli:
     runs-on: default 
     steps:
@@ -26,8 +27,9 @@ jobs:
       - run: |
           curl https://mise.run | sh
           mise install
-      - run: cd fruittools-cli
-      - run: gleam deps download
-      - run: gleam test
-      - run: gleam format --check src test
+      - run: |
+          cd fruittools-cli
+          gleam deps download
+          gleam test
+          gleam format --check src test
 
