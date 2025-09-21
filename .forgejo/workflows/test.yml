@@ -1,0 +1,24 @@
+name: checks
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+jobs:
+  checks-deamon:
+    runs-on: alpine-default
+    steps:
+      - uses: actions/checkout@v4
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: "27.1.2"
+          gleam-version: "1.12.0"
+          rebar3-version: "3"
+          # elixir-version: "1"
+      - run: cd fruittools-dmn
+      - run: gleam deps download
+      - run: gleam test
+      - run: gleam format --check src test
