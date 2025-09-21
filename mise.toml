@@ -1,2 +1,4 @@
 [tools]
+bun = "latest"
+erlang = "28"
 gleam = "latest"
