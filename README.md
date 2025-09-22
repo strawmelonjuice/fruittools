@@ -1,5 +1,13 @@
 # Fruittools
 
+Discontinued in favor of a different approach of the same idea, with the same name. Keeping this here as reference though.
+<https://git.strawmelonjuice.com/strawmelonjuice/fruittools>
+
+
+
+--------------
+
+
 **A collection of tools, utilities and libraries by Mar [@strawmelonjuice](https://github.com/strawmelonjuice).**
 
 _Fair warning: I just made this to expel my boredom.
