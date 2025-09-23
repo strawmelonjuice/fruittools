@@ -40,7 +40,7 @@ jobs:
           curl https://mise.run | sh
           mise install
       - run: |
-          cd fruittools-commons
+          cd fruittools-lib
           gleam deps download
           gleam check
           gleam format --check src 
