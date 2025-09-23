@@ -2,3 +2,24 @@
 bun = "latest"
 erlang = "28"
 gleam = "latest"
+
+[tasks.all-check]
+description = "Run all checks"
+run = [
+{tasks = ["cli-check", "dmn-check", "lib-check"]}
+]
+
+[tasks.cli-check]
+description = "Run CLI checks"
+run = "gleam check"
+dir = "fruittools-cli"
+
+[tasks.dmn-check]
+description = "Run deamon checks"
+run = "gleam check"
+dir = "fruittools-dmn"
+
+[tasks.lib-check]
+description = "Run common library checks"
+run = "gleam check"
+dir = "fruittools-lib"

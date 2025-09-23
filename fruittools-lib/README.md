@@ -1,4 +1,4 @@
-# fruittools_commons
+# fruittools common library
 
 [![Package Version](https://img.shields.io/hexpm/v/fruittools_commons)](https://hex.pm/packages/fruittools_commons)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/fruittools_commons/)

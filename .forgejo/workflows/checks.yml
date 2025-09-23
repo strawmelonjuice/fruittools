@@ -32,7 +32,7 @@ jobs:
           gleam deps download
           gleam test
           gleam format --check src test
-  commons:
+  library:
     runs-on: alpine-default
     steps:
       - uses: actions/checkout@v4
