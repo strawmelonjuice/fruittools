@@ -42,6 +42,6 @@ jobs:
       - run: |
           cd fruittools-commons
           gleam deps download
-          gleam test
+          gleam check
           gleam format --check src test
 
