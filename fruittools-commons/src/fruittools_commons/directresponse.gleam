@@ -1,35 +1,20 @@
-import gleam/int
-import gleam/result
-import gmsg
+import gleam/dynamic/decode
+import gleam/json
 
 pub type DirectResponse {
   DirectResponse(status: Int, directoutput: String)
 }
 
-pub fn encode_direct_response(
-  response: DirectResponse,
-) -> Result(BitArray, EncodeError) {
-  MsgMap([
-    #(
-      gmsg.MsgString("status"),
-      gmsg.MsgString(response.status |> int.to_string()),
-    ),
-    #(gmsg.MsgString("directoutput"), gmsg.MsgString(response.directoutput)),
+pub fn direct_response_to_json(direct_response: DirectResponse) -> json.Json {
+  let DirectResponse(status:, directoutput:) = direct_response
+  json.object([
+    #("status", json.int(status)),
+    #("directoutput", json.string(directoutput)),
   ])
 }
 
-pub fn decode_direct_response(
-  from bits: BitArray,
-) -> Result(DirectResponse, gmsg.DecodeError) {
-  let pair_list_decoder = dict_decoder |> decode.map(dict_to_pairs)
-  let out: Result(List(#(String, String)), DecodeError) =
-    gmsg.parse(bits, pair_list_decoder)
-    |> result.map_error(DecodeErrorA)
-  use out <- result.try(out)
-  todo
-}
-
-pub type DecodeError {
-  DecodeErrorA(gmsg.DecodeError)
-  FieldError
+pub fn direct_response_decoder() -> decode.Decoder(DirectResponse) {
+  use status <- decode.field("status", decode.int)
+  use directoutput <- decode.field("directoutput", decode.string)
+  decode.success(DirectResponse(status:, directoutput:))
 }
