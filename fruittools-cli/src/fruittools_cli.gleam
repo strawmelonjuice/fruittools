@@ -66,5 +66,7 @@ fn opening_animation() {
     // <> " " |> string.repeat(5)
   })
   use <- timeout_nilled(50)
-  io.println(".")
+  io.print(". ")
+  use <- timeout_nilled(20)
+  io.println(premixed.bg_yellow(premixed.text_black(":)")))
 }
